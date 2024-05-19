@@ -14,7 +14,7 @@
     <div id="wrapper">
         <!-- Header -->
         <header id="header">
-            <h1><a href="../index.html">Welcome to my portfolio!</a></h1>
+            <h1><a href="../../index.html">Welcome to my portfolio!</a></h1>
             <nav class="main">
                 <ul>
                     <li class="menu">
@@ -91,11 +91,12 @@
                     elemental and array intrinsic functions from scratch, namely, spacing, nearest, iany, iall, and
                     norm2.
                     <br>
-                    I began by adding compile-time support for the sum intrinsic function, which calculates the sum of
-                    all elements in an array. The current implementation does not yet handle optional arguments such as
-                    dim. This limitation also applies to the other array intrinsics I worked on. There is an issue with
-                    the reshape intrinsic function, making it difficult to debug the dim argument. Therefore, I am
-                    currently handling only the mandatory arguments and plan to address the optional ones soon.
+                    I began by adding compile-time support for the <b>sum, product, minval</b> and <b>maxval</b>
+                    intrinsic function.
+                    The current implementation does not yet handle optional arguments such as
+                    dim and mask. This limitation also applies to the other array intrinsics I worked on. There is an
+                    issue with the reshape intrinsic function, making it difficult to debug the dim argument. Therefore,
+                    I am currently handling only the mandatory arguments and plan to address the optional ones soon.
                     <br>
                     Next week, I aim to resolve the <b>reshape</b> intrinsic issue and subsequently handle the optional
                     arguments for the array intrinsics.
@@ -134,9 +135,10 @@
                     intrinsics to implement from scratch.
                     <br>
                     I've created an issue to keep a track of issues and PRs I'm working on. Here's a link for the same:
-                    <a href="https://github.com/lfortran/lfortran/issues/4017">#4017</a>
-                    Overall, I found this week's work interesting and am grateful to <a
-                        herf="https://github.com/certik"> Ondřej Čertík </a> and the rest of the mentors
+                    <b><a href="https://github.com/lfortran/lfortran/issues/4017">#4017</a></b>.
+                    <br>
+                    Overall, I found this week's work interesting and am grateful to<b><a
+                            herf="https://github.com/certik"> Ondřej Čertík </a></b> and the rest of the mentors
                     at LFortran for their constant reviews and suggestions. I look forward to the next week and am eager
                     to complete the planned tasks.
 
