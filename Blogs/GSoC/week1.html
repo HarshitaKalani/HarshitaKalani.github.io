@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Harshita Kalani</title>
+    <link rel="icon" href="../../images/logo1.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="../index.html">Welcome to my portfolio!</a></h1>
+            <nav class="main">
+                <ul>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <section id="menu">
+            <section>
+                <center>
+                    <h1>My gallery</h1>
+                    <img src="../images/logo1.png" width="200" />
+                </center>
+            </section>
+
+            <!-- Links -->
+            <center>
+                <section>
+                    <ul class="links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/harshita-kalani-604866225/">
+                                <h3>LinkedIn profile</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/HarshitaKalani/">
+                                <h3>Github profile</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCc_aYRO_FzdB3OD7wkL1MBQ">
+                                <h3>Youtube channel</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </center>
+
+            <!-- Actions -->
+            <section>
+                <ul class="actions stacked">
+                    <a href="mailto: kalani.1@iitj.ac.in" class="button large fit"><span class="label">Write to
+                            me</span></a>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="week1.html">GSoC: Week 1</a></h2>
+                    </div>
+                    <div class="meta">
+                        <time class="published" datetime="2015-11-01">January 30, 2023</time>
+                        <a href="https://www.linkedin.com/in/harshita-kalani-604866225/" class="author"><span
+                                class="name">Harshita
+                                Kalani</span><img src="../images/logo1.png" alt="" /></a>
+                    </div>
+                </header>
+                <!-- <span class="image featured"><img src="../images/cover.png" alt="" height="500" />
+        </span> -->
+                <h2>Kicking Off GSoC: Intrinsic Functions and Compile-Time Evaluations in Week One</h2>
+                <p>
+                    This week marked the beginning of the coding period for GSoC, and I dived into implementing
+                    intrinsic functions from scratch. I focused on adding compile-time evaluation support for various
+                    array intrinsics. Specifically, I implemented compile-time support for the array intrinsic
+                    functions, namely, sum, product, minVal, maxVal, and count. Additionally, I implemented a number of
+                    elemental and array intrinsic functions from scratch, namely, spacing, nearest, iany, iall, and
+                    norm2.
+                    <br>
+                    I began by adding compile-time support for the sum intrinsic function, which calculates the sum of
+                    all elements in an array. The current implementation does not yet handle optional arguments such as
+                    dim. This limitation also applies to the other array intrinsics I worked on. There is an issue with
+                    the reshape intrinsic function, making it difficult to debug the dim argument. Therefore, I am
+                    currently handling only the mandatory arguments and plan to address the optional ones soon.
+                    <br>
+                    Next week, I aim to resolve the <b>reshape</b> intrinsic issue and subsequently handle the optional
+                    arguments for the array intrinsics.
+                    <br>
+                    Regarding the intrinsics I implemented from scratch, I started with the <b>spacing</b> intrinsic,
+                    which
+                    calculates the spacing between two consecutive floating-point numbers. For runtime implementation,
+                    an ASR node needs to be created for the spacing function. The same applies to the <b>nearest</b>
+                    intrinsic.
+                    This has been documented as a separate issue, and a compiler exception is thrown for runtime values
+                    for these functions.
+                    <br>
+                    I then implemented the <b>iany</b> and <b>iall</b> array intrinsics, which compute the bitwise OR
+                    and AND of array
+                    elements, respectively. Following that, I implemented the <b>norm2</b> intrinsic, which calculates
+                    the
+                    square root of the sum of the squares of array elements. A pull request for its implementation is
+                    ready for review.
+                    <br>
+                    Additionally, I worked on moving the <b>merge</b> intrinsic from the Intrinsic Array functions to
+                    the
+                    Intrinsic Elemental functions, where it belongs. I also refactored the code for ArrayConstant,
+                    replacing repetitive if-else conditions with switch cases to enhance readability, maintainability,
+                    and execution speed.
+                    <br>
+                    While we support the <b>Fortran backend</b> for several intrinsics, not all are covered. I have
+                    opened a
+                    pull request to add Fortran backend support for the array intrinsics, which is ready for review.
+                    <br>
+                    For the upcoming week, I have several plans. I will address the reshape intrinsic function issue,
+                    handle the optional arguments of array intrinsics, and work on the runtime implementation of the
+                    spacing and nearest intrinsic by designing the ASR node. I also plan to add Fortran backend support
+                    for the intrinsic elemental and inquiry functions, ensuring they run perfectly.
+                    I have outlined a better approach for the Fortran backend in the pull request, and if it is approved
+                    by my mentors, I will proceed with that. If I complete these tasks ahead of time, I will pick more
+                    intrinsics to implement from scratch.
+                    <br>
+                    I've created an issue to keep a track of issues and PRs I'm working on. Here's a link for the same:
+                    <a href="https://github.com/lfortran/lfortran/issues/4017">#4017</a>
+                    Overall, I found this week's work interesting and am grateful to <a
+                        herf="https://github.com/certik"> Ondřej Čertík </a> and the rest of the mentors
+                    at LFortran for their constant reviews and suggestions. I look forward to the next week and am eager
+                    to complete the planned tasks.
+
+                </p>
+                <footer>
+                    <ul class="stats">
+                        <li>
+                            <a href="https://github.com/HarshitaKalani/" target="_blank">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/harshita-kalani-604866225/">LinkedIn</a>
+                        </li>
+                        <!-- <li><a href="https://www.instagram.com/harsheyyyy_11/" target="_blank">Instagram</a></li> -->
+                    </ul>
+                </footer>
+            </article>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
