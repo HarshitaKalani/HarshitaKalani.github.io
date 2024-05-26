@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Harshita Kalani</title>
+    <link rel="icon" href="../../images/logo1.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="../../index.html">Welcome to my portfolio!</a></h1>
+            <nav class="main">
+                <ul>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <section id="menu">
+            <section>
+                <center>
+                    <h1>My gallery</h1>
+                    <img src="../images/logo1.png" width="200" />
+                </center>
+            </section>
+
+            <!-- Links -->
+            <center>
+                <section>
+                    <ul class="links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/harshita-kalani-604866225/">
+                                <h3>LinkedIn profile</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/HarshitaKalani/">
+                                <h3>Github profile</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCc_aYRO_FzdB3OD7wkL1MBQ">
+                                <h3>Youtube channel</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </center>
+
+            <!-- Actions -->
+            <section>
+                <ul class="actions stacked">
+                    <a href="mailto: kalani.1@iitj.ac.in" class="button large fit"><span class="label">Write to
+                            me</span></a>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="week1.html">GSoC: Week 2</a></h2>
+                    </div>
+                    <div class="meta">
+                        <time class="published" datetime="2015-11-01">May 26, 2024</time>
+                        <a href="https://www.linkedin.com/in/harshita-kalani-604866225/" class="author"><span
+                                class="name">Harshita
+                                Kalani</span><img src="../images/logo1.png" alt="" /></a>
+                    </div>
+                </header>
+                <!-- <span class="image featured"><img src="../images/cover.png" alt="" height="500" />
+        </span> -->
+                <h2>Week 2 of GSoC 2024: Intrinsic Functions and Fortran Backend Progress</h2>
+                <p>
+                    Hey, welcome to my blog for week 2 of GSoC 2024! This week, I started working on registering the
+                    intrinsic functions (array, elemental, and inquiry type) in the Fortran backend. I resolved issues
+                    that arose and added tests for them. Almost all the intrinsics are now registered in the Fortran
+                    backend and generate corresponding Fortran code with the <b>--show-fortran</b> flag.
+                    <br>
+                    Next, I cleaned up the code for array casting of different types and added a logical casting flag.
+                    <br>
+                    I then refactored the <b>kind</b> function from an elemental intrinsic to a type inquiry
+                    intrinsic, where it belongs, and added support for compile-time reduction of elemental and inquiry
+                    functions for extracting the kind. Additionally, I handled array type return types for array inputs
+                    in elemental functions.
+                    <br>
+                    I'm currently working on implementing the <b>real</b> intrinsic. Several issues have come up,
+                    such as those related to implied do loops and array slicing. I've created issues for these and will
+                    address them next week.
+                    <br>
+                    While debugging, I found that the implementation logic for the <b>unpack</b> intrinsic was
+                    incorrect, leading to wrong outputs. I submitted a PR to fix this, and it has been merged.
+                    <br>
+                    I then implemented another intrinsic named <b>dgamma</b> and prepared a list of all the
+                    intrinsics that are yet to be implemented. You can find them in <b><a
+                            href="https://github.com/lfortran/lfortran/issues/4017">#4017</a></b>.
+                    <br>
+                    I also worked on removing old code from the previous runtime library, which is one of the
+                    deliverables of my GSoC journey.
+                    <br>
+                    I've completed the implementation of the <b>achar</b> intrinsic; however, one test case is
+                    failing due to handling a null pointer. I will address this next week. I also looked into the
+                    <b>reshape</b> intrinsic, but it needs more time.
+                    <br>
+                    For the upcoming week, I plan to work on the following tasks:
+                <ul>
+                    <li>Complete the implementation of the <b>real</b> intrinsic</li>
+                    <li>Fix the failing test case for the <b>achar</b> intrinsic or find a workaround</li>
+                    <li>Work on the <b>reshape</b> intrinsic</li>
+                    <li>Implement the remaining intrinsics according to the tracker</li>
+                </ul>
+                Progress tracker: <b><a href="https://github.com/lfortran/lfortran/issues/4017">#4017</a></b>.
+                <br>
+                Overall, I found this week's work interesting and am grateful to <b><a
+                        href="https://github.com/certik">Ondřej Čertík</a></b> and the rest of the mentors at LFortran
+                for their constant reviews and suggestions. I look forward to next week and am eager to complete the
+                planned tasks.
+                </p>
+                Here's a link to related blogs: <b><a href="week1.html">GSoC: Week 1</a></b>
+
+                <footer>
+                    <ul class="stats">
+                        <li>
+                            <a href="https://github.com/HarshitaKalani/" target="_blank">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/harshita-kalani-604866225/">LinkedIn</a>
+                        </li>
+                        <!-- <li><a href="https://www.instagram.com/harsheyyyy_11/" target="_blank">Instagram</a></li> -->
+                    </ul>
+                </footer>
+            </article>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
