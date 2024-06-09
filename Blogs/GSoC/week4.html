@@ -53,10 +53,10 @@
                             </a>
                         </li>
                         <li>
-							<a href="../../Pages/achievements.html">
-								<h3>My achievements</h3>
-							</a>
-						</li>
+                            <a href="../../Pages/achievements.html">
+                                <h3>My achievements</h3>
+                            </a>
+                        </li>
                     </ul>
                 </section>
             </center>
@@ -76,77 +76,66 @@
             <article class="post">
                 <header>
                     <div class="title">
-                        <h2><a href="week1.html">GSoC: Week 1</a></h2>
+                        <h2><a href="week4.html">GSoC: Week 4</a></h2>
                     </div>
                     <div class="meta">
-                        <time class="published" datetime="2015-11-01">May 19, 2024</time>
+                        <time class="published" datetime="2024-06-09">June 9, 2024</time>
                         <a href="https://www.linkedin.com/in/harshita-kalani-604866225/" class="author"><span
                                 class="name">Harshita
                                 Kalani</span><img src="../../images/logo1.png" alt="" /></a>
                     </div>
                 </header>
-                <!-- <h2>Kicking Off GSoC: Intrinsic Functions and Compile-Time Evaluations in Week One</h2>
+                <h2>Week 4 of GSoC 2024: Advancing Runtime and Backend Improvements</h2>
+
                 <p>
-                    This week marked the beginning of the coding period for GSoC, and I dived into implementing
-                    intrinsic functions from scratch. I focused on adding compile-time evaluation support for various
-                    array intrinsics. Specifically, I implemented compile-time support for the array intrinsic
-                    functions, namely, sum, product, minVal, maxVal, and count. Additionally, I implemented a number of
-                    elemental and array intrinsic functions from scratch, namely, spacing, nearest, iany, iall, and
-                    norm2.
+                    Hey, welcome back to my blog for week 4. This week, I continued with the runtime example of
+                    <b>lfortran_intrinsic_sin</b> I mentioned in the last blog. After tweaking the code in the compile-time file, it
+                    started working smoothly.
                     <br>
-                    I began by adding compile-time support for the <b>sum, product, minval</b> and <b>maxval</b>
-                    intrinsic function.
-                    The current implementation does not yet handle optional arguments such as
-                    dim and mask. This limitation also applies to the other array intrinsics I worked on. There is an
-                    issue with the reshape intrinsic function, making it difficult to debug the dim argument. Therefore,
-                    I am currently handling only the mandatory arguments and plan to address the optional ones soon.
+                    I also worked on implementing the optional arguments of <b>minloc</b>, which is still in
+                    progress. For the Fortran backend, I generalized the code to handle all intrinsics automatically,
+                    eliminating the need for explicit registration in the ASR to Fortran backend. Additionally, I
+                    identified and reviewed issues related to intrinsic functions and reviewed corresponding PRs.
                     <br>
-                    Next week, I aim to resolve the <b>reshape</b> intrinsic issue and subsequently handle the optional
-                    arguments for the array intrinsics.
+                    The next day, I implemented all the functions in the <b>IEEE arithmetic module</b> from scratch in the
+                    runtime library, ensuring they are fully functional.
                     <br>
-                    Regarding the intrinsics I implemented from scratch, I started with the <b>spacing</b> intrinsic,
-                    which
-                    calculates the spacing between two consecutive floating-point numbers. For runtime implementation,
-                    an ASR node needs to be created for the spacing function. The same applies to the <b>nearest</b>
-                    intrinsic.
-                    This has been documented as a separate issue, and a compiler exception is thrown for runtime values
-                    for these functions.
+                    Alongside handling intrinsics, I began working on SNAP compilation by installing SNAP and reviewing
+                    the files to understand the process. This will continue in the upcoming weeks.
                     <br>
-                    I then implemented the <b>iany</b> and <b>iall</b> array intrinsics, which compute the bitwise OR
-                    and AND of array
-                    elements, respectively. Following that, I implemented the <b>norm2</b> intrinsic, which calculates
-                    the
-                    square root of the sum of the squares of array elements. A pull request for its implementation is
-                    ready for review.
+                    I then picked the <b>cshift</b> (circular shift for arrays) intrinsic and implemented it from
+                    scratch. I also looked for workarounds for the <b>len_trim</b>, <b>trim</b>, and
+                    <b>achar</b> functions.
                     <br>
-                    Additionally, I worked on moving the <b>merge</b> intrinsic from the Intrinsic Array functions to
-                    the
-                    Intrinsic Elemental functions, where it belongs. I also refactored the code for ArrayConstant,
-                    replacing repetitive if-else conditions with switch cases to enhance readability, maintainability,
-                    and execution speed.
+                    I addressed the issue mentioned in the last blog about returning an array output for an array input
+                    for intrinsic elemental functions. One of my mentors suggested an approach related to the
+                    <b>array_op</b> pass, which I'll be working on in the upcoming weeks.
                     <br>
-                    While we support the <b>Fortran backend</b> for several intrinsics, not all are covered. I have
-                    opened a
-                    pull request to add Fortran backend support for the array intrinsics, which is ready for review.
+                    For the <b>len_trim</b> and <b>trim</b> functions, I'm stuck on an issue related to
+                    generics, which I'll try to resolve next week. I created a workaround for the null string issue in
+                    the <b>achar</b> intrinsic and completed the PR.
                     <br>
-                    For the upcoming week, I have several plans. I will address the reshape intrinsic function issue,
-                    handle the optional arguments of array intrinsics, and work on the runtime implementation of the
-                    spacing and nearest intrinsic by designing the ASR node. I also plan to add Fortran backend support
-                    for the intrinsic elemental and inquiry functions, ensuring they run perfectly.
-                    I have outlined a better approach for the Fortran backend in the pull request, and if it is approved
-                    by my mentors, I will proceed with that. If I complete these tasks ahead of time, I will pick more
-                    intrinsics to implement from scratch.
-                    <br>
-                    I've created an issue to keep a track of issues and PRs I'm working on. Here's a link for the same:
-                    <b><a href="https://github.com/lfortran/lfortran/issues/4017">#4017</a></b>.
-                    <br>
-                    Overall, I found this week's work interesting and am grateful to<b><a
-                            herf="https://github.com/certik"> Ondřej Čertík </a></b> and the rest of the mentors
-                    at LFortran for their constant reviews and suggestions. I look forward to the next week and am eager
-                    to complete the planned tasks.
-                </p> -->
-                <p>OTW</p>
-                Here's a link to related blogs: <b><a href="week2.html">GSoC: Week 2</a></b>
+                    For the upcoming week, I plan to work on the following tasks:
+                <ul>
+                    <li>Implement the remaining intrinsics</li>
+                    <li>Work on the <b>array_op</b> pass for elemental intrinsics</li>
+                    <li>Continue working on <b>SNAP compilation</b></li>
+                    <li>Find workarounds for the <b>len_trim</b> and <b>trim</b> functions</li>
+                    <li>Generalize intrinsic registration in the <b>ASR to C, C++, and Julia backend</b></li>
+                </ul>
+                Progress tracker: <b><a href="https://github.com/lfortran/lfortran/issues/4017">#4017</a></b>.
+                <br>
+                Overall, I found this week's work engaging and am grateful to <b><a
+                        href="https://github.com/certik">Ondřej Čertík</a></b> and the rest of the mentors at LFortran
+                for their constant reviews and suggestions. I look forward to next week and am eager to complete the
+                planned tasks.
+                </p>
+
+
+                Here's a link to related blogs:<br>
+                <b><a href="week1.html">GSoC: Week 1</a></b><br>
+                <b><a href="week2.html">GSoC: Week 2</a></b><br>
+                <b><a href="week3.html">GSoC: Week 3</a></b>
                 <footer>
                     <ul class="stats">
                         <li>
