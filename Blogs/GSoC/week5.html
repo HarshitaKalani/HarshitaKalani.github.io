@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Harshita Kalani</title>
+    <link rel="icon" href="../../images/logo1.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="../../index.html">Welcome to my portfolio!</a></h1>
+            <nav class="main">
+                <ul>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <section id="menu">
+            <section>
+                <center>
+                    <h1>My gallery</h1>
+                    <img src="../../images/logo1.png" width="200" />
+                </center>
+            </section>
+
+            <!-- Links -->
+            <center>
+                <section>
+                    <ul class="links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/harshita-kalani-604866225/">
+                                <h3>LinkedIn profile</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/HarshitaKalani/">
+                                <h3>Github profile</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCc_aYRO_FzdB3OD7wkL1MBQ">
+                                <h3>Youtube channel</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pages/achievements.html">
+                                <h3>My achievements</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </center>
+
+            <!-- Actions -->
+            <section>
+                <ul class="actions stacked">
+                    <a href="mailto: kalani.1@iitj.ac.in" class="button large fit"><span class="label">Write to
+                            me</span></a>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="week5.html">GSoC: Week 5</a></h2>
+                    </div>
+                    <div class="meta">
+                        <time class="published" datetime="2024-06-16">June 16, 2024</time>
+                        <a href="https://www.linkedin.com/in/harshita-kalani-604866225/" class="author"><span
+                                class="name">Harshita
+                                Kalani</span><img src="../../images/logo1.png" alt="" /></a>
+                    </div>
+                </header>
+                <h2>Week 5 of GSoC 2024: Tackling Intrinsics and Integrating New Features</h2>
+                <p>
+                    Hello, welcome back to my weekly blog on GSoC 2024 progress. This week, I started by resolving
+                    issues related to real intrinsic as mentioned in the last blog.
+                    I fixed the use of nested intrinsics like <b>sum</b>. After handling that, two of
+                    the checks failed: one was an issue in the third-party code and the other related to WebAssembly
+                    (WASM). I worked on resolving the WASM issue and was able to resolve
+                    it. Thanks to Ubaid and Ondrej for the guidance.
+                    I've created a Minimal Reproducible Example (MRE) for the third-party code failure and will address
+                    it next week.
+                    <br>
+                    I investigated the <b>same_as_type</b> intrinsic, which is currently giving incorrect output.
+                    The issue seems to be with type handling when changed with allocation. I'll discuss this with my
+                    mentors and try to resolve it.
+                    <br>
+                    I reviewed the implementation of array intrinsics <b>cshift</b> and <b>eoshift</b>. They
+                    now work fine for one-dimensional arrays. My goal is to make these array intrinsics handle optional
+                    arguments as well. For this, I continued working on the PR related to handling optional arguments in
+                    <b>minloc</b> and <b>maxloc</b>. The design mentioned in the last blog caused runtime
+                    test failures, so I've devised another method to handle this and will complete it next week. If
+                    finished early, I'll handle optional arguments for more array intrinsics.
+                    <br>
+                    The third-party code failure in <b>len_trim</b> and <b>trim</b> functions was due to an
+                    issue with handling generics. I realized that a design change is needed to resolve this, which is
+                    currently a low priority. Thanks to Pranav for the help. I'll look for another workaround.
+                    <br>
+                    This week, I also updated the integration tests for intrinsics, adding tests for both scalar and
+                    array at compile-time and runtime. I added tests for <b>verify</b>, <b>index</b>,
+                    <b>scan</b>, <b>adjustl</b>, and <b>adjustr</b>. While adding tests for
+                    <b>erf</b>, <b>erfc</b>, <b>derf</b>, and <b>derfc</b>, I realized that we
+                    don't support arrays for intrinsics implemented with intrinsic mapping, so I fixed that. I'll add
+                    tests for the remaining intrinsics next week.
+                    <br>
+                    I then restarted working on <b>SNAP</b> compilation, commenting out the non-functional parts and pushing the
+                    changes. I investigated an issue related to handling tuples and will look into it in-depth next
+                    week.
+                    <br>
+                    For the upcoming week, I plan to work on the following tasks:
+                <ul>
+                    <li>Fix third-party code failure in the <b>real</b> intrinsic</li>
+                    <li>Update integration tests for more intrinsics and fix related issues</li>
+                    <li>Implement the remaining intrinsics</li>
+                    <li>Handle optional arguments for array intrinsics</li>
+                    <li>Continue working on <b>SNAP</b> compilation</li>
+                    <li>Debug <b>check_equal_type</b> function to fix <b>same_as_type</b> intrinsic</li>
+                    <li>Generalize intrinsic registration in the <b>ASR to C, C++, and Julia backend</b></li>
+                </ul>
+                Progress tracker: <b><a href="https://github.com/lfortran/lfortran/issues/4017">#4017</a></b>.
+                <br>
+                Overall, I found this week's work engaging and am grateful to <b><a
+                        href="https://github.com/certik">Ondřej Čertík</a></b> and the rest of the mentors at LFortran
+                for their constant reviews and suggestions. I look forward to next week and am eager to complete the
+                planned tasks.
+                </p>
+                Here's a link to related blogs:<br>
+                <b><a href="week1.html">GSoC: Week 1</a></b><br>
+                <b><a href="week2.html">GSoC: Week 2</a></b><br>
+                <b><a href="week3.html">GSoC: Week 3</a></b><br>
+                <b><a href="week4.html">GSoC: Week 4</a></b>
+                <footer>
+                    <ul class="stats">
+                        <li>
+                            <a href="https://github.com/HarshitaKalani/" target="_blank">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/harshita-kalani-604866225/">LinkedIn</a>
+                        </li>
+                    </ul>
+                </footer>
+            </article>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
