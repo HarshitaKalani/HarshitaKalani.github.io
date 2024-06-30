@@ -76,64 +76,61 @@
             <article class="post">
                 <header>
                     <div class="title">
-                        <h2><a href="week6.html">GSoC: Week 6</a></h2>
+                        <h2><a href="week7.html">GSoC: Week 7</a></h2>
                     </div>
                     <div class="meta">
-                        <time class="published" datetime="2024-06-23">June 23, 2024</time>
+                        <time class="published" datetime="2024-06-30">June 30, 2024</time>
                         <a href="https://www.linkedin.com/in/harshita-kalani-604866225/" class="author"><span
                                 class="name">Harshita Kalani</span><img src="../../images/logo1.png" alt="" /></a>
                     </div>
                 </header>
-                <h2>Week 6 of GSoC 2024: Midway Through the Journey</h2>
-
+                <h2>Week 7 of GSoC 2024: Tackling Intrinsic Functions and Compilation Challenges</h2>
                 <p>
-                    Today, I am halfway through my GSoC 2024 journey. The journey was so exciting and I'm aspiring for
-                    more.
-                    Talking about the tasks done, this week, I focused on handling the optional arguments for
-                    compile-time evaluation of functions, specifically the <b>mask</b> argument for
-                    <b>sum</b> intrinsic. With the new design, it works with the <b>mask</b> argument and
-                    <b>dim = 1</b>. Following this, I added support for <b>mask</b> in <b>product</b>,
-                    <b>iparity</b>, <b>minval</b>, and <b>maxval</b>, along with tests for them. While
-                    doing that, I found that the implementation logic for complex arguments in <b>product</b> was
-                    incorrect and spent some time resolving that.
+                    Hey there, I'm back with another blog post. This week, I focused on updating the integration tests
+                    for several intrinsics like <b>epsilon</b>, <b>precision</b>, <b>ior</b>,
+                    <b>ieor</b>, and <b>iand</b>. I opened issues for the bugs found in them and added
+                    support for handling array input to inquiry functions.
                     <br>
-                    Meanwhile, I cleaned up some unused and unnecessary code in the <b>name2signature</b> mapping.
+                    I added tests for <b>not</b>, <b>or</b>, <b>and</b>, and <b>xor</b> and
+                    realized that these intrinsics are implemented through mapping with <b>ior</b>,
+                    <b>iand</b>, and <b>ieor</b>, which do not support logical arguments. I opened an issue
+                    for that and will address them.
                     <br>
-                    A workaround for the <b>abs</b> function in the stdlib package was no longer needed, so I
-                    removed it, added tests for the same, updated the CI hash, and opened a PR.
+                    I then examined <b>selected_real_kind</b>, <b>selected_int_kind</b>, and
+                    <b>selected_char_kind</b> and found that these intrinsics only support scalar input and need
+                    refactoring. An issue has been opened for that as well.
                     <br>
-                    This week, I mainly focused on adding tests for intrinsics and ensuring they work for scalar/array
-                    values at both compile-time and runtime. If any errors or divergences were found, I opened issues
-                    for them. I've created a master list of all the intrinsics for which tests need to be added and
-                    ensured that the implementations are robust. You can find the list here: <b><a
+                    Next, I looked into <b>tiny</b> and <b>huge</b> and found issues related to arithmetic
+                    overflow. I addressed these issues and opened a PR to add tests for <b>maxexponent</b>,
+                    <b>minexponent</b>, <b>radix</b>, <b>range</b>, and <b>hypot</b>, solving
+                    related issues. <b>Maxexponent</b> and <b>minexponent</b> were implemented as elemental
+                    functions, but they are actually inquiry functions, so I refactored them.
+                    <br>
+                    Additionally, I updated the automatic Python script to ensure that the kind of the arguments in
+                    various intrinsics are equal. I've maintained a track of this here: <b><a
                             href="https://github.com/lfortran/lfortran/issues/3067">#3067</a></b>.
                     <br>
-                    Additionally, I updated the integration tests for intrinsics, adding tests for both scalar and array
-                    values at compile-time and runtime. I added tests for <b>sin</b>, <b>cos</b>, <b>tan</b>,
-                    <b>dsin</b>, <b>dcos</b>, and <b>dtan</b>. Then, I added tests for <b>lgt</b>,
-                    <b>llt</b>, <b>lle</b>, <b>lge</b>, <b>blt</b>, <b>bgt</b>,
-                    <b>ble</b>, and <b>bge</b>.
+                    I investigated issues encountered during compiling PRIMA, related to intrinsics such as support for
+                    the <b>spread</b> intrinsic function and the <b>mask</b> and <b>back</b> arguments
+                    for <b>minloc</b> and <b>maxloc</b>. I am currently working on implementing the
+                    <b>spread</b> intrinsic. The compile-time implementation is complete, and I will work on the
+                    runtime implementation next week.
                     <br>
-                    While adding tests for <b>ibclr</b>, <b>ibset</b>, and <b>btest</b>, I found that
-                    LFortran does not throw an error for negative values of the <b>pos</b> argument. So, I fixed
-                    that. While adding tests for <b>digits</b>, <b>leadz</b>, and <b>trailz</b>, I
-                    found several issues, such as incorrect output types and no support for array input in
-                    <b>digits</b>. Additionally, <b>digits</b> is implemented as an elemental function, but
-                    it should be an inquiry function. I opened issues for all these and will work on them next week.
+                    Earlier, I worked on the optional arguments for <b>minloc</b> and <b>maxloc</b>. Some
+                    tests are failing with that implementation, so I will look into that as well.
                     <br>
-                    I also analyzed the <b>selected_int_kind</b>, <b>selected_real_kind</b>, and
-                    <b>selected_char_kind</b> functions and found that errors are not reported when non-scalar
-                    arguments are passed or when the wrong type of arguments is passed.
-                    <br>
-                    The third-party code failure while implementing the <b>real</b> intrinsic is yet to be dealt
-                    with. I'll also work on supporting optional arguments in array intrinsic functions.
+                    I ended the week with a workaround for the <b>real</b> intrinsic, which was failing due to
+                    third-party code. I explored the issue but have yet to resolve it fully. For now, I made a
+                    workaround in the stdlib and opened an issue. With the workaround, the PR is now merged, but it
+                    needs proper refactoring to maintain performance.
                     <br>
                     For the upcoming week, I plan to work on the following tasks:
                 <ul>
-                    <li>Fix third-party code failure in the <b>real</b> intrinsic</li>
-                    <li>Update integration tests for more intrinsics and fix related issues</li>
-                    <li>Handle optional arguments for array intrinsics</li>
-                    <li>Continue working on <b>SNAP</b> compilation</li>
+                    <li>Complete the implementation of the <b>spread</b> intrinsic</li>
+                    <li>Support <b>mask</b> and <b>back</b> arguments for <b>minloc</b> and
+                        <b>maxloc</b></li>
+                    <li>Add integration tests and resolve bugs related to intrinsics</li>
+                    <li>Work on <b>PRIMA</b> and <b>SNAP</b> compilation</li>
                 </ul>
                 Progress tracker: <b><a href="https://github.com/lfortran/lfortran/issues/4017">#4017</a></b>.
                 <br>
@@ -142,13 +139,13 @@
                 for their constant reviews and suggestions. I look forward to next week and am eager to complete the
                 planned tasks.
                 </p>
-
                 Here's a link to related blogs:<br>
                 <b><a href="week1.html">GSoC: Week 1</a></b><br>
                 <b><a href="week2.html">GSoC: Week 2</a></b><br>
                 <b><a href="week3.html">GSoC: Week 3</a></b><br>
                 <b><a href="week4.html">GSoC: Week 4</a></b><br>
-                <b><a href="week5.html">GSoC: Week 5</a></b>
+                <b><a href="week5.html">GSoC: Week 5</a></b><br>
+                <b><a href="week6.html">GSoC: Week 6</a></b>
                 <footer>
                     <ul class="stats">
                         <li>
