@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Harshita Kalani</title>
+    <link rel="icon" href="../../images/logo1.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="../../index.html">Welcome to my portfolio!</a></h1>
+            <nav class="main">
+                <ul>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <section id="menu">
+            <section>
+                <center>
+                    <h1>My gallery</h1>
+                    <img src="../../images/logo1.png" width="200" />
+                </center>
+            </section>
+
+            <!-- Links -->
+            <center>
+                <section>
+                    <ul class="links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/harshita-kalani-604866225/">
+                                <h3>LinkedIn profile</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/HarshitaKalani/">
+                                <h3>Github profile</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCc_aYRO_FzdB3OD7wkL1MBQ">
+                                <h3>Youtube channel</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pages/achievements.html">
+                                <h3>My achievements</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </center>
+
+            <!-- Actions -->
+            <section>
+                <ul class="actions stacked">
+                    <a href="mailto: kalani.1@iitj.ac.in" class="button large fit"><span class="label">Write to
+                            me</span></a>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="week8.html">GSoC: Week 8</a></h2>
+                    </div>
+                    <div class="meta">
+                        <time class="published" datetime="2024-06-30">July 7, 2024</time>
+                        <a href="https://www.linkedin.com/in/harshita-kalani-604866225/" class="author"><span
+                                class="name">Harshita Kalani</span><img src="../../images/logo1.png" alt="" /></a>
+                    </div>
+                </header>
+                <h2>Week 8 of GSoC 2024: Enhancing Intrinsics and Introducing the Simplifier Pass</h2>
+                <p>
+                    Hello, I'm back with the blog post for week 8. This week, I focused on implementing the
+                    <b>spread</b> intrinsic. I completed a basic implementation that handles 1D and 2D return
+                    types. The PR was merged, but there are several improvements that can be addressed in subsequent
+                    PRs.
+                    <br>
+                    This week, I also took on something new: working on the <b>simplifier pass</b>. This pass will help create
+                    auxiliaries for expressions, ensuring that allocatables are only created when necessary. It will
+                    also include a verifier to catch bugs early, preventing them from reaching the LLVM backend. This
+                    refactoring will streamline and speed up multiple passes, making debugging and compiling larger
+                    codes easier.
+                    <br>
+                    I had a meeting with Gagandeep, who initiated this project. He explained the working of this pass.
+                    While the pass is almost implemented, there are several bugs that need to be fixed while executing
+                    the integration tests. I'm working on them.
+                    <br>
+                    I then looked into the <b>ishftc</b>, <b>conjg</b>, and <b>bit_size</b> intrinsics
+                    and added tests for them. During this process, I discovered that some intrinsics do not yet have
+                    runtime implementations. I've opened an issue for this and believe we should at least throw an error
+                    indicating that the intrinsic is not yet implemented for runtime parameters.
+                    <br>
+                    In the weekly meeting with Ondřej, we discussed the issues with handling <b>optional arguments</b> for
+                    array intrinsics. We developed a plan for addressing these issues, and I have started working on it.
+                    I'll soon open a PR and continue working on it next week, along with the simplifier pass.
+                    <br>
+                    For the upcoming week, I plan to work on the following tasks:
+                <ul>
+                    <li>Continue working on the simplifier pass</li>
+                    <li>Support optional arguments for <b>minloc</b> and <b>maxloc</b></li>
+                    <li>Add integration tests and resolve bugs related to intrinsics</li>
+                </ul>
+                Progress tracker: <b><a href="https://github.com/lfortran/lfortran/issues/4017">#4017</a></b>.
+                <br>
+                I found this week's work really exciting and am grateful to <b><a
+                        href="https://github.com/certik">Ondřej Čertík</a></b> and the rest of the mentors at LFortran
+                for their constant reviews and suggestions. I look forward to next week and am eager to complete the
+                planned tasks. Stay tuned for more updates!
+                </p>
+                Here's a link to related blogs:<br>
+                <b><a href="week4.html">GSoC: Week 4</a></b><br>
+                <b><a href="week5.html">GSoC: Week 5</a></b><br>
+                <b><a href="week6.html">GSoC: Week 6</a></b><br>
+                <b><a href="week7.html">GSoC: Week 7</a></b>
+                <footer>
+                    <ul class="stats">
+                        <li>
+                            <a href="https://github.com/HarshitaKalani/" target="_blank">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/harshita-kalani-604866225/">LinkedIn</a>
+                        </li>
+                    </ul>
+                </footer>
+            </article>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
