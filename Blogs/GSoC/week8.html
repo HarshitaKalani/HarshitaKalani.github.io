@@ -86,20 +86,21 @@
                 </header>
                 <h2>Week 8 of GSoC 2024: Enhancing Intrinsics and Introducing the Simplifier Pass</h2>
                 <p>
-                    Hello, I'm back with the blog post for week 8. This week, I focused on implementing the
+                    Hello, I'm back with the blog post for week 8. This week, I began with implementing the
                     <b>spread</b> intrinsic. I completed a basic implementation that handles 1D and 2D return
                     types. The PR was merged, but there are several improvements that can be addressed in subsequent
                     PRs.
                     <br>
                     This week, I also took on something new: working on the <b>simplifier pass</b>. This pass will help create
-                    auxiliaries for expressions, ensuring that allocatables are only created when necessary. It will
-                    also include a verifier to catch bugs early, preventing them from reaching the LLVM backend. This
-                    refactoring will streamline and speed up multiple passes, making debugging and compiling larger
+                    auxiliaries for expressions, also ensuring that allocatables are only created when necessary. It includes
+                    a verifier to catch bugs early, preventing them from reaching the LLVM backend. This
+                    refactoring is aimed to streamline and speed up multiple passes, making debugging and compiling larger
                     codes easier.
                     <br>
-                    I had a meeting with Gagandeep, who initiated this project. He explained the working of this pass.
+                    I'm having regular meetings with Gagandeep, who initiated this project. He explained the working of this pass.
                     While the pass is almost implemented, there are several bugs that need to be fixed while executing
-                    the integration tests. I'm working on them.
+                    the integration tests. I'm working on them. I could fix some simple bugs and am trying to understand 
+                    its working in more detail.
                     <br>
                     I then looked into the <b>ishftc</b>, <b>conjg</b>, and <b>bit_size</b> intrinsics
                     and added tests for them. During this process, I discovered that some intrinsics do not yet have
