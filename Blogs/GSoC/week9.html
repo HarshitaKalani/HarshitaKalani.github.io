@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Harshita Kalani</title>
+    <link rel="icon" href="../../images/logo1.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="../../index.html">Welcome to my portfolio!</a></h1>
+            <nav class="main">
+                <ul>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <section id="menu">
+            <section>
+                <center>
+                    <h1>My gallery</h1>
+                    <img src="../../images/logo1.png" width="200" />
+                </center>
+            </section>
+
+            <!-- Links -->
+            <center>
+                <section>
+                    <ul class="links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/harshita-kalani-604866225/">
+                                <h3>LinkedIn profile</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/HarshitaKalani/">
+                                <h3>Github profile</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCc_aYRO_FzdB3OD7wkL1MBQ">
+                                <h3>Youtube channel</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pages/achievements.html">
+                                <h3>My achievements</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </center>
+
+            <!-- Actions -->
+            <section>
+                <ul class="actions stacked">
+                    <a href="mailto: kalani.1@iitj.ac.in" class="button large fit"><span class="label">Write to
+                            me</span></a>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="week8.html">GSoC: Week 9</a></h2>
+                    </div>
+                    <div class="meta">
+                        <time class="published" datetime="2024-07-14">July 14, 2024</time>
+                        <a href="https://www.linkedin.com/in/harshita-kalani-604866225/" class="author"><span
+                                class="name">Harshita Kalani</span><img src="../../images/logo1.png" alt="" /></a>
+                    </div>
+                </header>
+                <h2>Week 9 of GSoC 2024: Progress on the Simplifier Pass and Optional Arguments</h2>
+
+                <p>
+                    Hey, I'm excited to share that this week I picked up something new: the <b>simplifier pass</b>. I
+                    briefly described the pass in the last blog. This week, I focused on fixing bugs in the pass and had
+                    regular meetings with Gagandeep to understand its workings in more detail. These sessions were like
+                    pair programming, where I learned more about resolving bugs and implementing new features.
+                    A detailed overview of the pass is present here: <a
+                        href="https://github.com/lfortran/lfortran/pull/3748">#3748</a>
+                    <br>
+                    I'm thrilled to report that around 31% of tests now pass with the simplifier pass, and we are not
+                    far from achieving our final goal.
+                    <br>
+                    In parallel, I continued working on optional arguments and opened a PR that now supports optional
+                    arguments for <b>minloc</b> and <b>maxloc</b> for both compile-time and runtime. I also
+                    added integration tests for these. The PR is ready for review.
+                    <br>
+                    For the upcoming week, I plan to focus on the simplifier pass, helping to resolve bugs and wrap it
+                    up soon.
+                    <br>
+                    Progress tracker: <b><a href="https://github.com/lfortran/lfortran/issues/4017">#4017</a></b>.
+                    <br>
+                    This week was really exciting, and I'm grateful to <b><a href="https://github.com/certik">Ondřej
+                            Čertík</a></b> and the rest of the mentors at LFortran for their constant reviews and
+                    suggestions. I look forward to next week and am eager to complete the planned tasks. Stay tuned for
+                    more updates!
+                </p>
+                Here's a link to related blogs:<br>
+                <b><a href="week5.html">GSoC: Week 5</a></b><br>
+                <b><a href="week6.html">GSoC: Week 6</a></b><br>
+                <b><a href="week7.html">GSoC: Week 7</a></b><br>
+                <b><a href="week8.html">GSoC: Week 8</a></b>
+                <footer>
+                    <ul class="stats">
+                        <li>
+                            <a href="https://github.com/HarshitaKalani/" target="_blank">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/harshita-kalani-604866225/">LinkedIn</a>
+                        </li>
+                    </ul>
+                </footer>
+            </article>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
